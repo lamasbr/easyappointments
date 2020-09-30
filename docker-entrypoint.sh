@@ -16,6 +16,7 @@ createAppSettings() {
         sed -i "s#// \$config\['smtp_crypto'\] = 'ssl'#\$config['smtp_crypto'] = '$SMTP_CRYPTO'#g" $PROJECT_DIR/application/config/email.php
         sed -i "s#// \$config\['smtp_port'\] = 25#\$config['smtp_port'] = $SMTP_PORT#g" $PROJECT_DIR/application/config/email.php
     fi
+    sed -i "2i\ date_default_timezone_set('$TIMEZONE');" $PROJECT_DIR/index.php
     sed -i "s/url-to-easyappointments-directory/$APP_URL/g" $PROJECT_DIR/config.php
 
     chown -R www-data $PROJECT_DIR
