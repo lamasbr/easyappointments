@@ -2,6 +2,7 @@
 
 createAppSettings() {
     cp $PROJECT_DIR/config-sample.php $PROJECT_DIR/config.php
+    sed -i "s/LANGUAGE      = 'english'/LANGUAGE      = '$LANGUAGE'/g" $PROJECT_DIR/config.php
     sed -i "s/DB_HOST       = ''/DB_HOST = '$DB_HOST'/g" $PROJECT_DIR/config.php
     sed -i "s/DB_USERNAME   = ''/DB_USERNAME = '$DB_USERNAME'/g" $PROJECT_DIR/config.php
     sed -i "s/DB_PASSWORD   = ''/DB_PASSWORD = '$DB_PASSWORD'/g" $PROJECT_DIR/config.php
